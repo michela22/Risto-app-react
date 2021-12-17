@@ -18,11 +18,16 @@ class Card extends Component{
              Voglio che il componente padre App passi diversi attributi al compoenente figlio Card
              per far ciò è meglio usare Class Component in App.js*/}
             <div className="card" style={{width: '18rem', textAlign: 'center'}}>
-            <img src={this.props.img} className="card-img-top" alt="img" />
+            <img src={this.props.card.img} className="card-img-top" alt="img" style={{height: 150}}/>
                 <div className="card-body">
-                    <h5 className="card-title"> {this.props.foodName}</h5>
-                    <p className="card-text">${this.props.prezzo}</p>
-                    <button  className="btn btn-outline-danger">Elimina</button>
+                    <h5 className="card-title"> {this.props.card.foodName}</h5>
+                    <p className="card-text">${this.props.card.prezzo}</p>
+                    {/* onClick per far invocare metodo handleDelete che ho passato con la prop onDelete
+                    NB devo per forza usare arrow function perchè sto passando 
+                    un argomento this.props.card.id
+                    altrimenti potevo scrivere solo 
+                    this.props.onDelete()  */}
+                    <button onClick={()=> this.props.onDelete(this.props.card.id)} className="btn btn-outline-danger">Elimina</button>
                 </div>
              </div>
         </div>
