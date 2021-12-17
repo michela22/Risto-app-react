@@ -27,7 +27,12 @@ class Card extends Component{
                     un argomento this.props.card.id
                     altrimenti potevo scrivere solo 
                     this.props.onDelete()  */}
-                    <button onClick={()=> this.props.onDelete(this.props.card.id)} className="btn btn-outline-danger">Elimina</button>
+                    
+                    <button onClick={()=> this.props.onIncrement(this.props.card)}type="button"
+                     className="btn btn-outline-success"> Aggiungi
+                    <span className='badge  bg-secondary'>{this.props.card.quantità}</span> </button><hr/>
+                    <button onClick={()=> this.props.onDelete(this.props.card.id)}
+                     className="btn btn-outline-danger">Elimina</button>
                 </div>
              </div>
         </div>
